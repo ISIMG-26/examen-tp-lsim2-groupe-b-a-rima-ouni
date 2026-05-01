@@ -1,0 +1,185 @@
+/* --- Variables pour la cohérence des couleurs --- */
+:root {
+    --couleur-principale: #2c3e50;
+    --couleur-secondaire: #e74c3c;
+    --couleur-fond: #f9f9f9;
+    --couleur-texte: #333;
+    --blanc: #ffffff;
+}
+
+/* --- Reset de base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+    line-height: 1.6;
+}
+
+/* --- Header et Navigation --- */
+header {
+    background-color: var(--blanc);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .logo h2 {
+    color: var(--couleur-principale);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--couleur-texte);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--couleur-secondaire);
+}
+
+/* --- Section Bannière (Hero) --- */
+.hero {
+    background-color: var(--couleur-principale);
+    color: var(--blanc);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- Section Produits --- */
+.produits-vedettes {
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.produits-vedettes h2 {
+    margin-bottom: 30px;
+    color: var(--couleur-principale);
+}
+
+.grid-produits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* --- Cartes Produits --- */
+.carte-produit {
+    background-color: var(--blanc);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.carte-produit:hover {
+    transform: translateY(-5px);
+}
+
+.carte-produit img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain; /* Garde les proportions de l'image */
+    background-color: #fff;
+}
+
+.info-produit {
+    padding: 15px;
+}
+
+.prix {
+    color: var(--couleur-secondaire);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.btn-ajout {
+    background-color: var(--couleur-principale);
+    color: var(--blanc);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-ajout:hover {
+    background-color: var(--couleur-secondaire);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--couleur-principale);
+    color: var(--blanc);
+    margin-top: 40px;
+}
+/* --- Formulaires (Authentification) --- */
+.container-auth {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.form-section {
+    background-color: var(--blanc);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--couleur-principale);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Style pour les messages d'erreur JavaScript */
+.erreur-msg {
+    color: var(--couleur-secondaire);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none; /* Caché par défaut, affiché par JS */
+}
